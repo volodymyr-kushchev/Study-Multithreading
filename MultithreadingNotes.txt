@@ -1,0 +1,16 @@
+Threads: 
+
+
+TSL - Thread Local Storage
+attribute - [ThreadStatic] применяеться только к статическим полям что бы их копию поместить в локальное хранилиже потока (TSL)
+ThreadLocal<T> позволяет хранить в TSL как статические так и екземплярные поля классаю 
+
+Thread.SetData and Thread.GetData - также позволяют хранить данные в TSL, 
+два недостатка: 1) мендленее чем через атрибут и ThreadLocal<T>; 2) Данные не строго типизированы. Оба метода SetData и GetData принимают параметры типа Object. 
+/* 
+static LocalDataStoreSlot greeting = Thread.AllocateDataSlot(); 
+
+Thread.SetData(greeting, "Goodbye from the main thread");  
+Thread.GetData(greeting)
+Thread.FreeNamedDataSlot("greeting"); // releases across all threads  
+*/
