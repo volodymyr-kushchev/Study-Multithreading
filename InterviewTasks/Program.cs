@@ -17,16 +17,16 @@ namespace InterviewTasks
                 "ewjfrjeifjo6",
                 "ewjfrjeifjo7"
             };
-            Console.WriteLine(String.Join("\n", numbers.MyExtention()));
+            Console.WriteLine(String.Join("\n", numbers.MyExtention(0)));
         }
 
-        public static IEnumerable<T> MyExtention<T>(this IEnumerable<T> collection)
+        public static IEnumerable<T> MyExtention<T>(this IEnumerable<T> collection, ushort eachNext = 3)
         {
-            byte innerCounter = 3;
+            ushort innerCounter = eachNext;
 
             foreach (T record in collection)
             {
-                if (innerCounter++ == 3)
+                if (innerCounter++ == eachNext)
                 {
                     yield return record;
                     innerCounter = 1;
