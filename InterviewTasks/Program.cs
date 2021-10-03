@@ -9,15 +9,15 @@ namespace InterviewTasks
         {
             List<string> numbers = new List<string>()
             {
-                "ewjfrjeifjo1",
-                "ewjfrjeifjo2",
-                "ewjfrjeifjo3",
-                "ewjfrjeifjo4",
-                "ewjfrjeifjo5",
-                "ewjfrjeifjo6",
-                "ewjfrjeifjo7"
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             };
-            Console.WriteLine(String.Join("\n", numbers.MyExtention(0)));
+            Console.WriteLine(String.Join(Environment.NewLine, numbers.MyExtention()));
         }
 
         public static IEnumerable<T> MyExtention<T>(this IEnumerable<T> collection, ushort eachNext = 3)
